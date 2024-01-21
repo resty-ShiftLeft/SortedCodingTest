@@ -71,3 +71,6 @@ C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\NLog.
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\nlog.config
+C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\DocumentFormat.OpenXml.Framework.dll
+C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\System.IO.Packaging.dll

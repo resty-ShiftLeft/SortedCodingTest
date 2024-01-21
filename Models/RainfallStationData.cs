@@ -13,9 +13,9 @@
         public string lat { get; set; }
         public string long_ { get; set; }
 
-        public RainfallStationMeasures measures { get; set; } = new RainfallStationMeasures();
+        public List<RainfallStationMeasures> measures { get; set;} = new List<RainfallStationMeasures>();
 
-        public string northing { get; set; }
+        public int northing { get; set; }
         public string notation { get; set; }
         public string riverName { get; set; }
         public string stationReference { get; set;}
