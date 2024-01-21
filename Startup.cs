@@ -13,12 +13,9 @@ namespace SortedCodingTest
 
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddControllers(mvcOptions => mvcOptions.EnableEndpointRouting = false)
-            //    .AddNewtonsoftJson();
 
             // Caching 
             services.AddDistributedMemoryCache();
-            //services.AddCoreLayer(Configuration);
 
             services.AddMvcCore(options =>
             {
@@ -33,8 +30,6 @@ namespace SortedCodingTest
                     {
                         builder
                             .AllowAnyOrigin()
-                            //.WithOrigins("https://*.application")
-                            //.SetIsOriginAllowedToAllowWildcardSubdomains()
                             .AllowAnyMethod()
                             .AllowAnyHeader();
                     });
@@ -42,6 +37,7 @@ namespace SortedCodingTest
 
             services.AddAuthorization();
             services.AddControllers();
+            services.AddHttpClient();
 
             services.AddSwaggerGen(c =>
             {
