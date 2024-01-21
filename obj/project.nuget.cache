@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xiLZiLakNCJ+FpeWs2Capi5qS4QDQ7Tkv8mrKJANZloMOkGEM3xMEBylECO7vV+bQFfiMC5U8eCl5j6Ck5sWeA==",
+  "dgSpecHash": "gTTo587jZuvbIH4MyG5e93IUMZFlTFjTEBnB5a+nLbR51gwOJkqRTc5v2MpvcrHkq4/hTniKeI9ShO6uj/hlYA==",
   "success": true,
   "projectFilePath": "C:\\Users\\mAnoL\\Desktop\\ShiftLeft\\NetCore\\SortedCodingTest\\SortedCodingTest.csproj",
   "expectedPackageFiles": [
@@ -9,7 +9,11 @@
     "C:\\Users\\mAnoL\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\mAnoL\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\mAnoL\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
-    "C:\\Users\\mAnoL\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+    "C:\\Users\\mAnoL\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
+    "C:\\Users\\mAnoL\\.nuget\\packages\\system.net.http.json\\8.0.0\\system.net.http.json.8.0.0.nupkg.sha512",
+    "C:\\Users\\mAnoL\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\mAnoL\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\mAnoL\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }
