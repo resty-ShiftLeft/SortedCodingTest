@@ -28,7 +28,6 @@ namespace SortedCodingTest.Controllers
             try
             {
                 var response = await _httpClient.GetStringAsync(externalUrl);
-                var jsonObject = JsonConvert.DeserializeObject<JObject>(response);
 
                 var jsonObject_response = JsonConvert.DeserializeObject<JObject>(response);
 
