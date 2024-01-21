@@ -66,3 +66,9 @@ C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\obj\Debug\net6.0\refin
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\obj\Debug\net6.0\SortedCodingTest.pdb
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\obj\Debug\net6.0\SortedCodingTest.genruntimeconfig.cache
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\obj\Debug\net6.0\ref\SortedCodingTest.dll
+C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\Config\nlog.config
+C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\NLog.dll
+C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\nlog.config
