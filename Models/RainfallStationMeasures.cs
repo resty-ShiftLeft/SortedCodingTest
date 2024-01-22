@@ -6,7 +6,7 @@
         public string datumType { get; set; }
         public string label { get; set; }
 
-        //public List<RainfallStationMeasuresLastReading> latestReading { get; set; } = new List<RainfallStationMeasuresLastReading>();
+        public RainfallStationMeasuresLastReading latestReading { get; set; }
 
         public string notation { get; set; }
         public string parameter { get; set; }
@@ -15,6 +15,9 @@
         public string qualifier { get; set; }
         public string station { get; set; }
         public string stationReference { get; set; }
+        
+        public List<string> type { get; set; }
+
         public string unit { get; set; }
         public string unitName { get; set; }
         public string valueType { get; set; }

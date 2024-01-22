@@ -29,7 +29,7 @@ namespace SortedCodingTest.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
         public async Task<IActionResult> GetAllRainfall(string id)
         {
-            var externalUrl = "https://environments.data.gov.uk/flood-monitoring/id/stations/" + id;
+            var externalUrl = "https://environment.data.gov.uk/flood-monitoring/id/stations/" + id;
 
             try
             {
@@ -66,6 +66,28 @@ namespace SortedCodingTest.Controllers
                 // Get index items
                 var items = jsonObject_response["items"];
 
+                var _measure = new List<RainfallStationMeasures>();
+                foreach (var measure in items["measures"])
+                {
+                    _measure.Add(new RainfallStationMeasures
+                    {
+                        id = measure["@id"].ToString(),
+                        datumType = measure["datumType"]?.ToString(),
+                        label = measure["label"].ToString(),
+                        notation = measure["notation"].ToString(),
+                        parameter = measure["parameter"].ToString(),
+                        parameterName = measure["parameterName"].ToString(),
+                        period = int.Parse(measure["period"].ToString()),
+                        qualifier = measure["qualifier"].ToString(),
+                        station = measure["station"].ToString(),
+                        stationReference = measure["stationReference"].ToString(),
+                        type = new List<string>(){ measure["type"].ToString() }, 
+                        unit = measure["unit"].ToString(),
+                        unitName = measure["unitName"].ToString(),
+                        valueType = measure["valueType"].ToString()
+                    });
+                }
+
                 var mappedData = new RainfallStationData()
                 {
                     id = items["@id"].ToString(),
@@ -78,23 +100,7 @@ namespace SortedCodingTest.Controllers
                     label = items["label"].ToString(),
                     lat = items["lat"].ToString(),
                     long_ = items["long"].ToString(),
-                    measures = new List<RainfallStationMeasures> { new RainfallStationMeasures()
-                        {
-                            id = items["measures"][0]["@id"].ToString(),
-                            datumType = items["measures"][0]["datumType"]?.ToString(),
-                            label = items["measures"][0]["label"].ToString(),
-                            notation = items["measures"][0]["notation"].ToString(),
-                            parameter = items["measures"][0]["parameter"].ToString(),
-                            parameterName = items["measures"][0]["parameterName"].ToString(),
-                            period = int.Parse(items["measures"][0]["period"].ToString()),
-                            qualifier = items["measures"][0]["qualifier"].ToString(),
-                            station = items["measures"][0]["station"].ToString(),
-                            stationReference = items["measures"][0]["stationReference"].ToString(),
-                            unit = items["measures"][0]["unit"].ToString(),
-                            unitName = items["measures"][0]["unitName"].ToString(),
-                            valueType = items["measures"][0]["valueType"].ToString()
-                        }
-                    },
+                    measures = _measure,
                     northing = int.Parse(items["northing"].ToString()),
                     notation = items["notation"].ToString(),
                     riverName = items["riverName"].ToString(),
