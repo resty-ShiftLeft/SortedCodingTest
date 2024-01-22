@@ -1,4 +1,5 @@
 ﻿using Microsoft.OpenApi.Models;
+using SortedCodingTest.Services;
 using System.Reflection;
 
 namespace SortedCodingTest
@@ -15,6 +16,7 @@ namespace SortedCodingTest
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddHttpClient<RainfallService>();
             // Caching 
             services.AddDistributedMemoryCache();
 

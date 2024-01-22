@@ -30,6 +30,7 @@ C:\Dev\SortedCodingTest\obj\Debug\net6.0\refint\SortedCodingTest.dll
 C:\Dev\SortedCodingTest\obj\Debug\net6.0\SortedCodingTest.pdb
 C:\Dev\SortedCodingTest\obj\Debug\net6.0\SortedCodingTest.genruntimeconfig.cache
 C:\Dev\SortedCodingTest\obj\Debug\net6.0\ref\SortedCodingTest.dll
+C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\nlog.config
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\appsettings.json
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\SortedCodingTest.exe
@@ -37,10 +38,17 @@ C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\Sorte
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\SortedCodingTest.runtimeconfig.json
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\SortedCodingTest.dll
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\SortedCodingTest.pdb
+C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\DocumentFormat.OpenXml.Framework.dll
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\NLog.dll
+C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\System.IO.Packaging.dll
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\System.Net.Http.Json.dll
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\System.Text.Json.dll
@@ -66,11 +74,3 @@ C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\obj\Debug\net6.0\refin
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\obj\Debug\net6.0\SortedCodingTest.pdb
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\obj\Debug\net6.0\SortedCodingTest.genruntimeconfig.cache
 C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\obj\Debug\net6.0\ref\SortedCodingTest.dll
-C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\Newtonsoft.Json.dll
-C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\NLog.dll
-C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\NLog.Extensions.Logging.dll
-C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
-C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\nlog.config
-C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
-C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\DocumentFormat.OpenXml.Framework.dll
-C:\Users\mAnoL\Desktop\ShiftLeft\NetCore\SortedCodingTest\bin\Debug\net6.0\System.IO.Packaging.dll

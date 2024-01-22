@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using SortedCodingTest.Models;
-using DocumentFormat.OpenXml.Drawing.Spreadsheet;
-using System.Collections.Generic;
+using SortedCodingTest.Services;
 
 namespace SortedCodingTest.Controllers
 {
@@ -12,11 +10,14 @@ namespace SortedCodingTest.Controllers
     [ApiController]
     public class RainfallStationController : ControllerBase
     {
+        private readonly RainfallService _rainfallService;
         private readonly HttpClient _httpClient;
 
-        public RainfallStationController(HttpClient httpClient)
+        public RainfallStationController(HttpClient httpClient,
+            RainfallService rainfallService)
         {
             _httpClient = httpClient;
+            _rainfallService = rainfallService;
         }
 
         /// <summary>
@@ -63,92 +64,116 @@ namespace SortedCodingTest.Controllers
                 }
                   
                 var response = await _httpClient.GetStringAsync(externalUrl);
-                var jsonObject_response = JsonConvert.DeserializeObject<JObject>(response);
+                var rainfallData = await _rainfallService.GetRainfallStationData(id);
+                var items = rainfallData["items"];
 
+                //var jsonObject_response = JsonConvert.DeserializeObject<JObject>(response);
                 // Get index items
-                var items = jsonObject_response["items"];
+               // var items = jsonObject_response["items"];
                
                 //latestReading
                 var _latestReading = new List<RainfallStationMeasuresLastReading>();
+                _latestReading.Clear();
                 //measures
                 var _measure = new List<RainfallStationMeasures>();
+                _measure.Clear();
                 //stageScale
                 var _stageScale = new List<RainfallStationStageScaleData>();
-
-
-                foreach (var latestReading in items["measures"])
-                {
-                    _latestReading.Add(new RainfallStationMeasuresLastReading
-                    {
-                        id = latestReading["@id"].ToString(),
-                        date = DateOnly.Parse(latestReading["latestReading"]["date"].ToString()),
-                        dateTime = DateTime.Parse(latestReading["latestReading"]["dateTime"].ToString()),
-                        measure = latestReading["latestReading"]["measure"].ToString(),
-                        value = latestReading["latestReading"]["value"].ToString(),
-                    });
-                }
+                _stageScale.Clear();
 
                 foreach (var measure in items["measures"])
                 {
-                    _measure.Add(new RainfallStationMeasures
+                    if(measure.Type == JTokenType.Object)
                     {
-                        id = measure["@id"].ToString(),
-                        datumType = measure["datumType"]?.ToString(),
-                        label = measure["label"].ToString(),
-                        latestReading = _latestReading,
-                        notation = measure["notation"].ToString(),
-                        parameter = measure["parameter"].ToString(),
-                        parameterName = measure["parameterName"].ToString(),
-                        period = int.Parse(measure["period"].ToString()),
-                        qualifier = measure["qualifier"].ToString(),
-                        station = measure["station"].ToString(),
-                        stationReference = measure["stationReference"].ToString(),
-                        type = new List<string>()
-                            { 
-                                measure["type"].ToString() 
-                            }, 
-                        unit = measure["unit"].ToString(),
-                        unitName = measure["unitName"].ToString(),
-                        valueType = measure["valueType"].ToString()
-                    });
+                        _measure.Add(new RainfallStationMeasures
+                        {
+                            id = measure["@id"].ToString(),
+                            datumType = measure["datumType"]?.ToString(),
+                            label = measure["label"].ToString(),
+
+                            latestReading = new List<RainfallStationMeasuresLastReading>()
+                        {
+                            new RainfallStationMeasuresLastReading
+                            {
+
+                                id = measure["latestReading"]["@id"].ToString(),
+                                date = DateOnly.Parse(measure["latestReading"]["date"].ToString()),
+                                dateTime = DateTime.Parse(measure["latestReading"]["dateTime"].ToString()),
+                                measure = measure["latestReading"]["measure"].ToString(),
+                                value = measure["latestReading"]["value"].ToString(),
+                            }
+                        }
+                        ,
+                            notation = measure["notation"].ToString(),
+                            parameter = measure["parameter"].ToString(),
+                            parameterName = measure["parameterName"].ToString(),
+                            period = int.Parse(measure["period"].ToString()),
+                            qualifier = measure["qualifier"].ToString(),
+                            station = measure["station"].ToString(),
+                            stationReference = measure["stationReference"].ToString(),
+                            type = new List<string>()
+                            {
+                                measure["type"].ToString()
+                            },
+                            unit = measure["unit"].ToString(),
+                            unitName = measure["unitName"].ToString(),
+                            valueType = measure["valueType"].ToString()
+                        });
+                    }
                 }
+
+
 
                 var _highestRecent = new List<RainfallStationHighestRecent>();
                 var _maxOnRecord = new List<RainfallStationMaxOnRecord>();
                 var _minOnRecord = new List<RainfallStationMinOnRecord>();
+                _highestRecent.Clear();
+                _maxOnRecord.Clear();
+                _minOnRecord.Clear();
 
-                _highestRecent.Add(new RainfallStationHighestRecent
+
+                if(items["stageScale"].Type == JTokenType.Object)
                 {
-                    id = items["stageScale"]["highestRecent"]["@id"].ToString(),
+                    _stageScale.Add(new RainfallStationStageScaleData
+                    {
+                        id = items["stageScale"]["@id"].ToString(),
+                        datum = double.Parse(items["stageScale"]["datum"].ToString()),
+
+                        highestRecent = new List<RainfallStationHighestRecent>()
+                        {
+                            new RainfallStationHighestRecent
+                            {
+                                id = items["stageScale"]["highestRecent"]["@id"].ToString(),
                     dateTime = DateTime.Parse(items["stageScale"]["highestRecent"]["dateTime"].ToString()),
                     value = double.Parse(items["stageScale"]["highestRecent"]["value"].ToString())
-                });
-                _maxOnRecord.Add(new RainfallStationMaxOnRecord
-                {
-                    id = items["stageScale"]["maxOnRecord"]["@id"].ToString(),
+                            }
+                        },
+                        maxOnRecord = new List<RainfallStationMaxOnRecord>()
+                        {
+                            new RainfallStationMaxOnRecord
+                            {
+                                id = items["stageScale"]["maxOnRecord"]["@id"].ToString(),
                     dateTime = DateTime.Parse(items["stageScale"]["maxOnRecord"]["dateTime"].ToString()),
                     value = double.Parse(items["stageScale"]["maxOnRecord"]["value"].ToString())
-                });
-                _minOnRecord.Add(new RainfallStationMinOnRecord
-                {
-                    id = items["stageScale"]["minOnRecord"]["@id"].ToString(),
+                            }
+                        },
+                        minOnRecord = new List<RainfallStationMinOnRecord>()
+                        {
+                            new RainfallStationMinOnRecord
+                            {
+                                 id = items["stageScale"]["minOnRecord"]["@id"].ToString(),
                     dateTime = DateTime.Parse(items["stageScale"]["minOnRecord"]["dateTime"].ToString()),
                     value = double.Parse(items["stageScale"]["minOnRecord"]["value"].ToString())
-                });
+                            }
+                        },
 
-                _stageScale.Add(new RainfallStationStageScaleData
-                {
-                    id = items["stageScale"]["@id"].ToString(),
-                    datum = double.Parse(items["stageScale"]["datum"].ToString()),
-                    
-                    highestRecent = _highestRecent,
-                    maxOnRecord = _maxOnRecord,
-                    minOnRecord = _minOnRecord,
+                        scaleMax = int.Parse(items["stageScale"]["scaleMax"].ToString()),
+                        typicalRangeHigh = double.Parse(items["stageScale"]["typicalRangeHigh"].ToString()),
+                        typicalRangeLow = double.Parse(items["stageScale"]["typicalRangeLow"].ToString())
+                    });
+                }
 
-                    scaleMax = int.Parse(items["stageScale"]["scaleMax"].ToString()),
-                    typicalRangeHigh = double.Parse(items["stageScale"]["typicalRangeHigh"].ToString()),
-                    typicalRangeLow = double.Parse(items["stageScale"]["typicalRangeLow"].ToString())
-                });
+
 
                 var mappedData = new RainfallStationData()
                 {
