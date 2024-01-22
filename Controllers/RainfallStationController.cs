@@ -81,7 +81,10 @@ namespace SortedCodingTest.Controllers
                         qualifier = measure["qualifier"].ToString(),
                         station = measure["station"].ToString(),
                         stationReference = measure["stationReference"].ToString(),
-                        type = new List<string>(){ measure["type"].ToString() }, 
+                        type = new List<string>()
+                            { 
+                                measure["type"].ToString() 
+                            }, 
                         unit = measure["unit"].ToString(),
                         unitName = measure["unitName"].ToString(),
                         valueType = measure["valueType"].ToString()
@@ -107,6 +110,10 @@ namespace SortedCodingTest.Controllers
                     stationReference = items["stationReference"].ToString(),
                     status = items["status"].ToString(),
                     town = items["town"].ToString(),
+                    type = new List<string>() 
+                        { 
+                            items["type"].ToString() 
+                        },
                     wiskiID = items["wiskiID"].ToString(),
                 };
 

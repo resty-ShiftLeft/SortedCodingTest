@@ -21,6 +21,9 @@
         public string stationReference { get; set;}
         public string status { get; set;}
         public string town { get; set; }
+        
+        public List<string> type { get; set; }
+
         public string wiskiID { get; set; }
     }
 }
