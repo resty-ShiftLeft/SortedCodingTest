@@ -21,6 +21,7 @@ namespace SortedCodingTest.Controllers
         }
 
         [HttpGet]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public async Task<IActionResult> GetAllRainfallFloodData()
         {
             var externalUrl = "https://environment.data.gov.uk/flood-monitoring/id/floods";
