@@ -4,6 +4,7 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using SortedCodingTest.Models;
 using DocumentFormat.OpenXml.Drawing.Spreadsheet;
+using System.Collections.Generic;
 
 namespace SortedCodingTest.Controllers
 {
@@ -65,8 +66,25 @@ namespace SortedCodingTest.Controllers
 
                 // Get index items
                 var items = jsonObject_response["items"];
-
+               
+                //latestReading
+                var _latestReading = new List<RainfallStationMeasuresLastReading>();
+                //measures
                 var _measure = new List<RainfallStationMeasures>();
+
+
+                foreach (var latestReading in items["measures"])
+                {
+                    _latestReading.Add(new RainfallStationMeasuresLastReading
+                    {
+                        id = latestReading["@id"].ToString(),
+                        date = DateOnly.Parse(latestReading["latestReading"]["date"].ToString()),
+                        dateTime = DateTime.Parse(latestReading["latestReading"]["dateTime"].ToString()),
+                        measure = latestReading["latestReading"]["measure"].ToString(),
+                        value = latestReading["latestReading"]["value"].ToString(),
+                    });
+                }
+
                 foreach (var measure in items["measures"])
                 {
                     _measure.Add(new RainfallStationMeasures
@@ -74,6 +92,7 @@ namespace SortedCodingTest.Controllers
                         id = measure["@id"].ToString(),
                         datumType = measure["datumType"]?.ToString(),
                         label = measure["label"].ToString(),
+                        latestReading = _latestReading,
                         notation = measure["notation"].ToString(),
                         parameter = measure["parameter"].ToString(),
                         parameterName = measure["parameterName"].ToString(),

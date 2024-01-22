@@ -6,7 +6,7 @@
         public string datumType { get; set; }
         public string label { get; set; }
 
-        public RainfallStationMeasuresLastReading latestReading { get; set; }
+        public List<RainfallStationMeasuresLastReading> latestReading { get; set; } = new List<RainfallStationMeasuresLastReading>();
 
         public string notation { get; set; }
         public string parameter { get; set; }
