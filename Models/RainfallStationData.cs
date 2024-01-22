@@ -18,6 +18,9 @@
         public int northing { get; set; }
         public string notation { get; set; }
         public string riverName { get; set; }
+
+        public List<RainfallStationStageScaleData> stageScaleData { get; set; } = new List<RainfallStationStageScaleData>();
+
         public string stationReference { get; set;}
         public string status { get; set;}
         public string town { get; set; }
